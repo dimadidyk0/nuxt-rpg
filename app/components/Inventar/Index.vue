@@ -13,7 +13,7 @@
             item: {
                 id: 2,
                 emoji: '🧪',
-                quantity: 12,
+                quantity: 10,
             }
         },
         { id: 3, item: null },
@@ -36,32 +36,36 @@
 <style scoped>
     .list {
         display: flex;
-        gap: 4px;
+        gap: 8px;
         margin: auto;
     }
 
     .item {
         height: 60px;
         width: 60px;
-        border: 1px solid var(--color-cyan-teal);
-        background: var(--color-indigo);
+        border: 2px solid var(--color-dark-purple);
+        background: var(--color-dark-brown);
         border-radius: 4px;
         font-size: 36px;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        cursor: pointer;
+        transition: scale 0.2s ease-in, background-color 0.2s ease-out;
 
         &:not(:empty) {
-            background-color: var(--color-dark-teal);
-            border-color: var(--color-aqua);;
+            background-color: var(--color-burgundy);
+            border-color: var(--color-dusty-rose);
 
             &:active {
-                background-color: var(--color-teal-green);
+                background-color: var(--color-coral-pink);
+                scale: 1.1;
             }
             @media (hover: hover) {
                 &:hover {
-                    background-color: var(--color-teal-green);
+                    background-color: var(--color-coral-pink);
+                    scale: 1.1;
                 }
             }
         }
@@ -73,6 +77,6 @@
         right: 4px;
         font-size: 14px;
         font-weight: bold;
-        color: var(--color-sand-gold);
+        color: var(--color-blush-pink);
     }
 </style>

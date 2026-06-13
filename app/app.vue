@@ -19,7 +19,7 @@
   .footer {
     margin-top: auto;
     display: flex;
-    padding: 24px;
+    padding: 20px;
     border-top: 2px solid var(--color-indigo);
     background: var(--color-dark-purple);
   }
