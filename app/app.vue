@@ -1,5 +1,6 @@
 <template>
   <div>
-    hello
+    Game over<br>
+    You Win!
   </div>
 </template>

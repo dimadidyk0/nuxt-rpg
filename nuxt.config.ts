@@ -8,5 +8,10 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@pinia/nuxt', 
     '@pinia/colada-nuxt'
+  ],
+  css: [  
+    '~/assets/css/reset.css',
+    '~/assets/css/variables.css',
+    '~/assets/css/index.css',
   ]
 })
