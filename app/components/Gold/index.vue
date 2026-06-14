@@ -1,10 +1,14 @@
 <script setup lang="ts">
-    const goldAmount = ref(30);
+import { usePlayerStore } from '~/stores/player';
+
+const store = usePlayerStore();
+const { gold } = storeToRefs(store);
+console.log(gold)
 </script>
 
 <template>
     <div class="gold">
-        <i>💰</i> {{ goldAmount }}
+        <i>💰</i> {{ gold }}
     </div>
 </template>
 
