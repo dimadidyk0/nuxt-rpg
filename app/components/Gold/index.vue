@@ -15,7 +15,7 @@
         align-items: center;
         font-size: 24px;
         line-height: 24px;
-        padding: 12px 24px 10px;
+        padding: 12px 20px 10px 16px;
         background: var(--color-wood-brown);
         border: 2px solid var(--color-sand-gold);
         color: var(--color-sand-gold);
