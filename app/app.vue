@@ -1,8 +1,15 @@
 <template>
   <div class="app">
-    Game over<br>
-    You Win!
+    <header class="header">
+      <Gold />
 
+      <MapButton />
+    </header>
+
+    <main class="main">
+      <NuxtPage />
+    </main>
+      
     <footer class="footer">
       <Inventar />
     </footer>
@@ -14,6 +21,24 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+  }
+
+  .header {
+    border-bottom: 2px solid var(--color-indigo);
+    background: var(--color-dark-purple);
+    margin-top: 0;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-grow: 1;
   }
 
   .footer {
