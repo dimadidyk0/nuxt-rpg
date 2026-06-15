@@ -11,6 +11,7 @@
     </main>
       
     <footer class="footer">
+      <Health />
       <Inventar />
     </footer>
   </div>

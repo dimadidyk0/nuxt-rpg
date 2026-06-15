@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import { usePlayerStore } from '~/stores/player';
 
-const { addGold, removeGold } = usePlayerStore();
+const { addGold, removeGold, changeHealth } = usePlayerStore();
 </script>
 
 <template>
   <div class="win">
-    MONEY!!!
+    Shop
 
     <div class="actions">
       <button class="button add" @click="addGold(10)">Find 10 gold!</button>
       <button class="button remove" @click="removeGold(10)">Lose 10 gold...</button>
+    </div>
+    <div class="actions">
+      <button class="button add" @click="changeHealth(10)">Heal 10 health!</button>
+      <button class="button remove" @click="changeHealth(-10)">Lose 10 health...</button>
     </div>
   </div>
 </template>
