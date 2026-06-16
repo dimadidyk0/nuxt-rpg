@@ -23,6 +23,10 @@ const menuList = [
     title: 'Win',
     to: '/win',
   },
+  {
+    title: 'Lose',
+    to: '/lose',
+  },
 ]
 </script>
 
