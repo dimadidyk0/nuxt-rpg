@@ -34,4 +34,8 @@ export const usePlayerStore = defineStore('player', () => {
         changeHealth,
         changeMaxHealth,
     }
+},{
+  persist: {
+    storage: piniaPluginPersistedstate.localStorage(),
+  }
 })
