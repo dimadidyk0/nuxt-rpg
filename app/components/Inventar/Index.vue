@@ -4,7 +4,7 @@
             id: 1,
             item: {
                 id: 1,
-                emoji: '🛡️',
+                imageSrc: '/assets/images/items/shield.png',
                 quantity: 2,
             }
         },
@@ -12,7 +12,7 @@
             id: 2,
             item: {
                 id: 2,
-                emoji: '🧪',
+                imageSrc: '/assets/images/items/health-potion.png',
                 quantity: 10,
             }
         },
@@ -26,7 +26,18 @@
     <div class="list">
         <div v-for="{id, item} in inventory" :key="id"  class="item" >
             <div v-if="item">
-                {{ item.emoji }}
+                <NuxtImg 
+                    v-if="item.imageSrc"
+                    :src="item.imageSrc"
+                    class="img"
+                    width="48" 
+                    height="48" 
+                    alt="item.alt"
+                    loading="lazy"
+                />
+                <span v-else>
+                    {{ item.emoji }}
+                </span>
                 <span class="quantity">{{ item.quantity }}</span>
             </div>
         </div>

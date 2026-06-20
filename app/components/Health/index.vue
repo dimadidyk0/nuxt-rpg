@@ -9,6 +9,9 @@ const ratio = computed(() => {
 const themeSettings = computed(() => ({
   '--ratio': `${ratio.value * 100}%`,
 }))
+
+console.log({themeSettings: themeSettings.value});
+
 </script>
 
 <template>

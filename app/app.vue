@@ -1,7 +1,10 @@
 <template>
   <div class="app">
     <header class="header">
-      <Gold />
+
+      <ClientOnly>
+        <Gold />
+      </ClientOnly>
 
       <MapButton />
     </header>
@@ -11,8 +14,10 @@
     </main>
       
     <footer class="footer">
-      <Health />
-      <Inventar />
+      <ClientOnly>
+        <Health />
+        <Inventar />
+      </ClientOnly>
     </footer>
   </div>
 </template>
