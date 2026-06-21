@@ -45,6 +45,7 @@
   .img {
     animation: movement 1s infinite steps(1);
   }
+  
 
   @keyframes movement {
     0%   { bottom: 0; }
