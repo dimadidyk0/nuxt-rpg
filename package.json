@@ -12,7 +12,11 @@
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
     "test:unit": "vitest --project unit",
-    "test:nuxt": "vitest --project nuxt"
+    "test:nuxt": "vitest --project nuxt",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@nuxt/eslint": "^1.16.0",
@@ -31,6 +35,9 @@
   "devDependencies": {
     "@vitest/coverage-v8": "^4.1.8",
     "@vue/test-utils": "^2.4.11",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "prettier": "^3.9.6",
     "vitest": "^4.1.8"
   }
 }

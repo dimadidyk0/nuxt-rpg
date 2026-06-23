@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { usePlayerStore } from '~/stores/player';
+import { usePlayerStore } from '~/stores/player'
 
-const { addGold, removeGold, changeHealth } = usePlayerStore();
+const { addGold, removeGold, changeHealth } = usePlayerStore()
 </script>
 
 <template>
@@ -20,29 +20,29 @@ const { addGold, removeGold, changeHealth } = usePlayerStore();
 </template>
 
 <style scoped>
-  .win {
-    font-size: 48px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
+.win {
+  font-size: 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
 
-  .actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-  }
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
 
-  .button {
-    border: 2px solid var(--color-gray-lilac);
-    font-size: 24px;
-    padding: 12px 24px;
-  }
+.button {
+  border: 2px solid var(--color-gray-lilac);
+  font-size: 24px;
+  padding: 12px 24px;
+}
 
-  .add {
-    background-color: var(--color-cyan-teal);
-  }
-  .remove {
-    background-color: var(--color-bright-red);
-  }
+.add {
+  background-color: var(--color-cyan-teal);
+}
+.remove {
+  background-color: var(--color-bright-red);
+}
 </style>

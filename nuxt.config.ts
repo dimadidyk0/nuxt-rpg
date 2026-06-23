@@ -4,22 +4,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' }
-      ]
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
     }
   },
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/test-utils',
-    '@pinia/nuxt', 
+    '@pinia/nuxt',
     '@pinia/colada-nuxt',
     'pinia-plugin-persistedstate/nuxt'
   ],
-  css: [  
-    '~/assets/css/reset.css',
-    '~/assets/css/variables.css',
-    '~/assets/css/index.css',
-  ]
+  css: ['~/assets/css/reset.css', '~/assets/css/variables.css', '~/assets/css/index.css']
 })
