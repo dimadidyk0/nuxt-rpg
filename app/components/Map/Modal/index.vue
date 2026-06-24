@@ -18,14 +18,6 @@ const menuList = [
   {
     title: 'Shop',
     to: '/shop'
-  },
-  {
-    title: 'Win',
-    to: '/win'
-  },
-  {
-    title: 'Lose',
-    to: '/lose'
   }
 ]
 </script>
