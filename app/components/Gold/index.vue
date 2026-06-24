@@ -3,7 +3,6 @@ import { usePlayerStore } from '~/stores/player'
 
 const store = usePlayerStore()
 const { gold } = storeToRefs(store)
-console.log(gold)
 </script>
 
 <template>
