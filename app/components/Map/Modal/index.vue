@@ -18,6 +18,10 @@ const menuList = [
   {
     title: 'Shop',
     to: '/shop'
+  },
+  {
+    title: 'Dungeon',
+    to: '/dungeon'
   }
 ]
 </script>
