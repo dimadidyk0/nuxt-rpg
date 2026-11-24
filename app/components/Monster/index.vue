@@ -3,6 +3,7 @@ interface Props {
   name: string
   image: string
   health: { current: number; max: number }
+  isAtacked: boolean
 }
 
 const props = defineProps<Props>()
@@ -15,7 +16,15 @@ const themeSettings = computed(() => ({
 
 <template>
   <div class="monster">
-    <NuxtImg :src="image" class="img" width="384" height="384" :alt="name" loading="lazy" />
+    <NuxtImg
+      :src="image"
+      class="img"
+      :class="isAtacked ? 'atacked' : ''"
+      width="384"
+      height="384"
+      :alt="name"
+      loading="lazy"
+    />
     <div class="health-bar" :style="themeSettings">{{ health.current }}/{{ health.max }}</div>
   </div>
 </template>
@@ -49,6 +58,33 @@ const themeSettings = computed(() => ({
   position: relative;
   left: -10px;
   animation: movement 1s infinite steps(1);
+}
+
+.atacked {
+  animation: hurt 0.4s linear infinite;
+}
+
+@keyframes hurt {
+  0% {
+    filter: none;
+    transform: scale(1);
+  }
+  1% {
+    filter: grayscale(1);
+    transform: scale(0.95);
+  }
+  49% {
+    filter: grayscale(1);
+    transform: scale(0.95);
+  }
+  50% {
+    filter: none;
+    transform: scale(1);
+  }
+  100% {
+    filter: none;
+    transform: scale(1);
+  }
 }
 
 @keyframes movement {

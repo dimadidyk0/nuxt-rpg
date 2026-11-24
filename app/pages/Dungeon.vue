@@ -1,10 +1,37 @@
 <script setup lang="ts">
 import { useEnemyStore } from '~/stores/enemy'
 
+const isAtacked = ref(false)
+const turns = ref(1)
+
 const store = useEnemyStore()
-const { monster } = storeToRefs(store)
+const player = usePlayerStore()
+const { health, strength } = storeToRefs(store)
 onMounted(() => {
   store.initMonster(1)
+  console.log(health.value, strength.value)
+})
+
+function handleAttackClick() {
+  isAtacked.value = true
+  const power = 1
+  const damage = Math.ceil(Math.random() * 10) * power
+
+  store.changeHealth(-damage)
+  turns.value--
+  setTimeout(() => {
+    isAtacked.value = false
+  }, 400)
+}
+
+watch(turns, (curr) => {
+  if (curr <= 0) {
+    setTimeout(() => {
+      player.changeHealth(-5)
+      turns.value++
+      console.warn('You have been attacked!')
+    }, 400)
+  }
 })
 </script>
 
@@ -15,10 +42,17 @@ onMounted(() => {
     <Dungeon>
       <Monster
         name="Skeleton"
+        :is-atacked="isAtacked"
         image="/assets/images/enemies/skeleton.gif"
-        :health="{ current: monster.health.current, max: monster.health.max }"
+        :health="{ current: health.current, max: health.max }"
       />
     </Dungeon>
+
+    <div class="actions">
+      <button :disabled="turns <= 0" class="action attack" @click="handleAttackClick">
+        Attack
+      </button>
+    </div>
   </main>
 </template>
 
@@ -33,5 +67,24 @@ onMounted(() => {
   text-align: center;
   margin-top: 0;
   margin-bottom: 24px;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.action {
+  padding: 20px;
+}
+
+.action[disabled] {
+  opacity: 0.5;
+}
+
+.attack {
+  border: 2px solid var(--color-bright-red);
+  background: var(--color-crimson);
 }
 </style>
